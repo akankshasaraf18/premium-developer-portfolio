@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: #07090e;
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07090e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Typography styles */
+.font-display {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Text Stroke / Outlined text effects */
+.text-stroke-white {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
+  color: transparent;
+  transition: all 0.3s ease;
+}
+
+.text-stroke-white:hover {
+  -webkit-text-stroke: 1.5px rgba(56, 189, 248, 0.8);
+  color: rgba(56, 189, 248, 0.05);
+}
+
+.text-stroke-thick {
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.25);
+  color: transparent;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(15, 20, 32, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(20, 27, 45, 0.75);
+  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 0 10px 40px -15px rgba(14, 165, 233, 0.15);
+}
+
+.glass-nav {
+  background: rgba(7, 9, 14, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Background Grids and Dots */
+.bg-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% 20%, rgba(14, 165, 233, 0.12) 0%, rgba(139, 92, 246, 0.05) 35%, transparent 70%);
+}
+
+.bg-subtle-mesh {
+  background: 
+    radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.06) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(6, 182, 212, 0.04) 0px, transparent 60%);
+}
+
+/* Glow effects */
+.glow-accent {
+  box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.3);
+}
+
+.glow-violet {
+  box-shadow: 0 0 25px -5px rgba(139, 92, 246, 0.3);
+}
+
+/* Magnetic / hover smooth scaling */
+.interactive-hover {
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
+}
+
+.interactive-hover:hover {
+  transform: translateY(-3px);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
